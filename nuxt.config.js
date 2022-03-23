@@ -70,6 +70,14 @@ export default {
     },
   },
 
+  modules: ["nuxt-microcms-module"],
+  microcms: {
+    options: {
+      serviceDomain: process.env.SERVICE_DOMAIN,
+      apiKey: process.env.GET_API_KEY,
+    },
+    mode: process.env.NODE_ENV === "production" ? "server" : "all",
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 }
