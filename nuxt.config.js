@@ -43,6 +43,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    'nuxt-microcms-module',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -70,7 +71,6 @@ export default {
     },
   },
 
-  modules: ["nuxt-microcms-module"],
   microcms: {
     options: {
       serviceDomain: process.env.SERVICE_DOMAIN,
