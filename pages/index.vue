@@ -8,20 +8,25 @@
       </v-card>
     </nuxt-link>
   </v-col>
+  <SearchForm></SearchForm>
 </v-col>
-
 </template>
 
 <script>
+import SearchForm from '../components/SearchForm'
 export default {
   async asyncData({ $microcms }) {
     const guides = await $microcms.get({
       endpoint: "guides",
+      // queries: {filters: 'name[contains]'},
     });
     console.log(guides);
     return {
       guides,
     };
+  },
+  components: {
+    SearchForm,
   },
 };
 </script>
