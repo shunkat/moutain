@@ -3,6 +3,8 @@
     <v-app-bar
       app
       shrink-on-scroll
+      dark
+      prominent
     >
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
@@ -28,3 +30,6 @@
     //
   }
 </script>
+<style lang="scss" scoped>
+
+</style>
