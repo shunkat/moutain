@@ -6,18 +6,7 @@
         <v-col 
           class="home-hero__content-text"
           >
-          <p>Welcome to Santanzin.</p>
-          <v-col
-            cols="12"
-            md="3"
-            align-content="center"
-          >
-            <div
-              class="pa-4 secondary text-no-wrap rounded-pill"
-            >
-              .rounded-pill
-            </div>
-          </v-col>
+          <p>Welcome to Santanzin.</p>  
         </v-col>
       </v-row>
     </v-container>
@@ -35,6 +24,7 @@
     background-position: center center;
     width: 100%;
     height: 90vh;
+    text-align:"center";
   
     // /* ここから追加 */
     // @include display_pc {
