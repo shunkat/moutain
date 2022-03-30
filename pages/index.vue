@@ -1,27 +1,24 @@
 <template>
-<v-col cols="4" class="px-12">
-  <v-col v-for="content in guides.contents" :key="content.id">
-    <nuxt-link :to="`/details/${content.id}/`">
-      <v-card elevation="2" height="200">
-        <v-card-title>{{ content.name }}</v-card-title>
-        <v-img :src="content.image.url" height="240" />
-      </v-card>
+  <section class="home">
+    <HomeHero></HomeHero>
+  </section>
+  <!-- <div>
+    <nuxt-link to="/guides/">
+      <p>フロントページ自由にいじってね</p>
     </nuxt-link>
-  </v-col>
-</v-col>
-
+  </div> -->
 </template>
-
 <script>
+import HomeHero from "../components/HomeHero.vue";
+
 export default {
-  async asyncData({ $microcms }) {
-    const guides = await $microcms.get({
-      endpoint: "guides",
-    });
-    console.log(guides);
-    return {
-      guides,
-    };
+  components: {
+    HomeHero,
   },
 };
 </script>
+<style lang="scss" scoped>
+.home {
+  padding-bottom: 50px;
+}
+</style>

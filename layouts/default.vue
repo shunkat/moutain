@@ -1,30 +1,28 @@
 <template>
   <v-app id="inspire">
-    <v-app-bar
-      app
-      shrink-on-scroll
-    >
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
-
-      <v-toolbar-title>Application</v-toolbar-title>
-
-      <v-spacer></v-spacer>
-
-      <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
-      </v-btn>
-    </v-app-bar>
-
+    <CommonHeader/>
     <v-main>
       <v-container>
         <Nuxt />
       </v-container>
     </v-main>
+    <CommonFooter/>    
   </v-app>
 </template>
 
 <script>
-  export default {
-    //
-  }
+import CommonHeader from "../components/CommonHeader.vue";
+import CommonFooter from "../components/CommonFooter.vue";
+
+export default {
+  components: {
+    CommonHeader,
+    CommonFooter
+  },
+};
 </script>
+<style lang="scss" scoped>
+// .v-container{
+//   width: "100vw";
+// }
+</style>
