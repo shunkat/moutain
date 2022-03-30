@@ -3,7 +3,7 @@
       <SearchForm></SearchForm>
       <v-col cols="4" class="px-12">
         <v-col v-for="content in guides.contents" :key="content.id">
-            <nuxt-link :to="`/details/${content.id}/`">
+            <nuxt-link :to="`/guides/${content.id}/`">
             <v-card elevation="2" height="200">
                 <v-card-title>{{ content.name }}</v-card-title>
                 <v-img :src="content.image.url" height="240" />
@@ -25,14 +25,12 @@ export default {
     return {
       selected: [],
     }
-    
   },
   async asyncData({ $microcms }) {
     const guides = await $microcms.get({
       endpoint: "guides",
-      queries: {filters: 'name[contains]"selected"'},
+      // queries: {filters: 'name[contains]"selected"'},
     });
-    console.log(guides);
     return {
       guides,
     };
