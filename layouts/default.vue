@@ -6,7 +6,7 @@
         <Nuxt />
       </v-container>
     </v-main>
-    <CommonFooter/>    
+    <CommonFooter/>
   </v-app>
 </template>
 
