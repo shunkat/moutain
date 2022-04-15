@@ -3,10 +3,10 @@
     <v-container  mt-0 pt-0 fluid fill-height class="home-hero__content"
       >
       <v-row>
-        <v-col 
+        <v-col
           class="home-hero__content-text"
           >
-          <p>Welcome to Santanzin.</p>  
+          <p>探そう山のガイドさん。</p>
         </v-col>
       </v-row>
     </v-container>
@@ -25,19 +25,16 @@
     width: 100%;
     height: 90vh;
     text-align:"center";
-  
     // /* ここから追加 */
     // @include display_pc {
     //   height: 100vh;
     // }
     /* ここまで追加 */
-  
     &-text {
       color: white;
       text-align: center;
       font-size: 28px;
       font-weight: bold;
-  
       // /* ここから追加 */
       // @include display_pc {
       //   font-size: 40px;

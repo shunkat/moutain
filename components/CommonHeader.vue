@@ -8,14 +8,21 @@
     >
       <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
       <!-- Page Titile -->
-      <v-toolbar-title>Santanzin</v-toolbar-title>
+      <v-avatar>
+        <img
+          src="../assets/img/square-logo.png"
+          alt="探そう山のガイドさん"
+          width="24px"
+        >
+      </v-avatar>
+      <v-toolbar-title>探そう山のガイドさん</v-toolbar-title>
       <!-- <v-container
       > -->
       <v-tabs
         centered
       >
         <v-tab
-          
+
           v-for="(menuItem, index) in menuItems"
           :key="index"
         >
@@ -44,17 +51,17 @@
       </v-list>
     </v-navigation-drawer>
   </header>
-  
+
 </template>
 
 <script>
-  import constants from '../src/style/common/header_item.js' 
- 
+  import constants from '../src/style/common/header_item.js'
+
   export default {
     data () {
       return {
         drawer: false,
-        menuItems: constants.menuItems 
+        menuItems: constants.menuItems
       }
     }
   }
@@ -73,7 +80,7 @@
 }
 .v-tabs {
   display: none;
- 
+
   @include display_pc {
     display: block !important;
   }
