@@ -1,29 +1,29 @@
 <template>
   <div id="app">
     <v-app id="inspire">
-      <v-container>
+      <v-container >
         <!-- ページ名 -->
         <p class="text-h5 font-weight-bold mb-8">{{ content.name }}さんの紹介ページ</p>
         <v-row>
           <!--写真5枚のグリッド-->
-          <v-container class="white">
-                  <v-row>
-                    <v-col cols="3" >
-                     <v-img  :src="content.image.url" />
+          <v-container class="rounded-lg">
+                  <v-row class="rounded overflow-hidden">
+                    <v-col cols="3">
+                     <v-img class="clipping" :src="content.image.url" />
                     </v-col>
                     <v-col cols="2" >
                       <v-row no-gutters>
-                        <v-img   :src="content.image.url" /> 
+                        <v-img class="clipping"  :src="content.image.url" /> 
                       </v-row>
                       <v-row no-gutters>
-                        <v-img   :src="content.image.url" /> 
+                        <v-img class="clipping"  :src="content.image.url" /> 
                       </v-row>
                     </v-col >
                     <v-col cols="3">
-                      <v-img  :src="content.image.url" /> 
+                      <v-img class="clipping" :src="content.image.url" /> 
                     </v-col>
                     <v-col cols="3">  
-                      <v-img :src="content.image.url" /> 
+                      <v-img class="clipping" :src="content.image.url" /> 
                     </v-col>
                   </v-row>
               </v-container>
@@ -168,6 +168,16 @@ export default {
 </script>
 
 <style scoped>
+.clipping{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.overflow-hidden{
+  overflow: hidden;
+}
+
 
 .sticky {
     position: sticky;
