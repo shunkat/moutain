@@ -2,47 +2,38 @@
   <div id="app">
     <v-app id="inspire">
       <v-container>
+        <!-- ページ名 -->
+        <p class="text-h5 font-weight-bold mb-8">{{ content.name }}さんの紹介ページ</p>
         <v-row>
-          <v-col cols="8">
-            <!-- ページ名 -->
-            <p class="text-h5 font-weight-bold mb-8">{{ content.name }}さんの紹介ページ</p>
-            <v-col cols="12" align="left">
-              <!--写真5枚のグリッド-->
-              <v-container class="white">
-                <v-col>
+          <!--写真5枚のグリッド-->
+          <v-container class="white">
                   <v-row>
-                    <v-card>
-                      <v-img contain max-height="100" max-width="100" :src="content.image.url" />
-                    </v-card>
-                    <v-col no-gutters>
-                      <v-row cols="30">
-                        <v-card>
-                          <v-img contain max-height="100" max-width="100" :src="content.image.url" /> 
-                        </v-card>
-                      </v-row>
-                      <v-row cols="8" sm="6">
-                        <v-card>
-                          <v-img contain max-height="100" max-width="100" :src="content.image.url" /> 
-                        </v-card>
-                      </v-row>
+                    <v-col cols="3" >
+                     <v-img  :src="content.image.url" />
                     </v-col>
-                    <v-row>
-                      <v-card>
-                        <v-img contain max-height="100" max-width="100" :src="content.image.url" /> 
-                      </v-card>
-                    </v-row>
-                    <v-row>
-                      <v-card>
-                        <v-img contain max-height="100" max-width="100" :src="content.image.url" /> 
-                      </v-card>
-                    </v-row>
+                    <v-col cols="2" >
+                      <v-row no-gutters>
+                        <v-img   :src="content.image.url" /> 
+                      </v-row>
+                      <v-row no-gutters>
+                        <v-img   :src="content.image.url" /> 
+                      </v-row>
+                    </v-col >
+                    <v-col cols="3">
+                      <v-img  :src="content.image.url" /> 
+                    </v-col>
+                    <v-col cols="3">  
+                      <v-img :src="content.image.url" /> 
+                    </v-col>
                   </v-row>
-                </v-col>
+              </v-container>
               
+          <v-col cols="8">
+            <v-col cols="12" align="left">
                 <v-spacer class="my-16" />
                 <v-row>
                   <!--幅.？.？-->
-                  <v-col cols="50" align="left" class="mb-0">
+                  <v-col cols="12" align="left" class="mb-0">
                       <v-row>
                         <!-- アイコン画像と画像サイズ -->
                         <v-img class="ml-4"  contain max-height="40" max-width="40" :src="content.image.url" />
@@ -74,7 +65,7 @@
                       <p class="text-h7  ">{{ genre }}</p>
                     </v-col>
                   </v-row>
-              </v-container>
+              
               <!-- 得意分野の詳細な説明 -->
               <v-col>
                 <p class="text-h7 mb-12">{{ content.genreDetail }}</p>
@@ -109,6 +100,7 @@
 
           <!-- 予約機能部分 -->
           <v-col cols="4">
+            
             <v-sheet rounded="xl" class="sticky" elevation="5" color="#FFFFFF">
               <p class="text-h5 ml-11 pt-8">依頼費用の目安{{ content.age }}から</p>
               <div >
@@ -179,6 +171,6 @@ export default {
 
 .sticky {
     position: sticky;
-    top: 120px;
+    top: 70px;
 }
 </style>
