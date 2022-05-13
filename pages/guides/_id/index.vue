@@ -6,27 +6,25 @@
         <p class="text-h5 font-weight-bold mb-8">{{ content.name }}さんの紹介ページ</p>
         <v-row>
           <!--写真5枚のグリッド-->
-          <v-container class="rounded-lg">
-                  <v-row class="rounded overflow-hidden">
-                    <v-col cols="3">
-                     <v-img class="clipping" :src="content.image.url" />
-                    </v-col>
-                    <v-col cols="2" >
-                      <v-row no-gutters>
-                        <v-img class="clipping"  :src="content.image.url" /> 
-                      </v-row>
-                      <v-row no-gutters>
-                        <v-img class="clipping"  :src="content.image.url" /> 
-                      </v-row>
-                    </v-col >
-                    <v-col cols="3">
-                      <v-img class="clipping" :src="content.image.url" /> 
-                    </v-col>
-                    <v-col cols="3">  
-                      <v-img class="clipping" :src="content.image.url" /> 
-                    </v-col>
-                  </v-row>
-              </v-container>
+          <v-row class="d-flex justify-space-between" no-gutters>
+            <v-col cols="3" class="pr-3">
+              <v-img class="clipping rounded-l-lg" :src="content.image.url" height="80vh" />
+            </v-col>
+            <v-col cols="3" class="pr-3">
+              <v-row no-gutters>
+                <v-img class="clipping" :src="content.image.url" height="40vh"/> 
+              </v-row>
+              <v-row no-gutters >
+                <v-img class="clipping" :src="content.image.url" height="40vh" /> 
+              </v-row>
+            </v-col >
+            <v-col cols="3" class="pr-3">
+              <v-img class="clipping" :src="content.image.url" height="80vh"/> 
+            </v-col>
+            <v-col cols="3">
+              <v-img class="clipping rounded-r-lg" :src="content.image.url" height="80vh"/> 
+            </v-col>
+          </v-row>
               
           <v-col cols="8">
             <v-col cols="12" align="left">
