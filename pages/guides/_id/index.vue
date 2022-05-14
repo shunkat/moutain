@@ -7,10 +7,10 @@
         <v-row>
           <!--写真5枚のグリッド-->
           <v-row class="d-flex justify-space-between" no-gutters>
-            <v-col cols="3" class="pr-3">
+            <v-col cols="3">
               <v-img class="clipping rounded-l-lg" :src="content.image.url" height="80vh" />
             </v-col>
-            <v-col cols="3" class="pr-3">
+            <v-col cols="3" class="pr-3 pl-3">
               <v-row no-gutters>
                 <v-img class="clipping" :src="content.image.url" height="40vh"/> 
               </v-row>
