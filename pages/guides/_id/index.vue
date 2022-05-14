@@ -52,7 +52,9 @@
                   <!--活動エリア -->
                   <v-row>
                     <p class="h7 ml-3 mr-10">活動エリア</p>
-                    <p class="text-h7">{{ content.age }}</p>
+                    <p class="text-h7">関東周辺</p>
+                  <!--TODO:コンテンツのの埋め込み-->
+
                   </v-row>
                   <!-- 得意分野 -->
                   <v-row>
@@ -72,19 +74,22 @@
             <!-- 資格 -->
             <v-col>
               <p class="text-h7">所持している資格</p>
-              <p class="text-h7  mb-12">{{ content.sex[0] }}</p>
+              <p class="text-h7  mb-12">クライミング(特にマルチピッチ)・雪山</p>
+              <!--TODO:コンテンツの埋め込み-->
               <v-divider></v-divider>
             </v-col>
             <!-- レンタル品一覧 -->
             <v-col>
               <p class="font-weight-bold">レンタル品一覧</p>
               <p class="font-weight-bold mb-12">{{ content.sex[0] }}</p>
+              <!--TODO:コンテンツの埋め込み-->
               <v-divider></v-divider>
             </v-col>
             <!--ガイドさんへの質問コーナー-->
             <v-col>
               <p class="font-weight-bold">ガイドさんへの質問コーナー</p>
               <p class="text-h7  mb-12">{{ content.sex[0] }}</p>
+              <!--TODO:コンテンツの埋め込み-->
               <v-divider></v-divider>
             </v-col>
             <!-- アピールメッセージ -->
@@ -92,6 +97,7 @@
               <v-col>
                 <p class="font-weight-bold">アピールメッセージ</p>
                 <p class="text-h7  mb-12">{{ content.sex[0] }}</p>
+                <!--TODO:コンテンツの埋め込み-->
               </v-col>
             
           </v-col>
@@ -114,11 +120,13 @@
                       <v-row>
                       <p class="text-h7 ml-11  ">所要時間</p>
                       <p class="text-h7  ml-12 ">{{ content.age }}分</p>
+                      <!--TODO:コンテンツの埋め込み-->
                       </v-row>
                       
                       <v-row>
                       <p class="text-h7 ml-11  ">難易度</p>
                       <p class="text-h7  ml-16 mb-12">{{ content.sex[0] }}</p>
+                      <!--TODO:コンテンツの埋め込み-->
                       </v-row>
                       </v-list-item-title>
                     </v-list-item-content>
