@@ -30,21 +30,20 @@
             <v-col cols="12" align="left">
                 <v-spacer class="my-16" />
                 <v-row>
-                  <!--幅.？.？-->
-                  <v-col cols="12" align="left" class="mb-0">
-                      <v-row>
-                        <!-- アイコン画像と画像サイズ -->
-                        <v-img class="ml-4"  contain max-height="40" max-width="40" :src="content.image.url" />
-                        <!-- 名前と年齢-->
-                        <p class="text-h5 font-weight-bold">{{ content.name }}さん</p>
-                        <p class="text-h7  ml-4 mr-2 mt-2">{{ content.age }}歳</p>
-                        <!-- 性別 -->
-                        <p class="text-h7  mb-12 mt-2">{{ content.sex[0] }}性</p>
-                      </v-row>         
-                      <v-col> 
-                        <!-- プロフィール -->      
-                        <p class="text-h6 text--primary">{{ content.about }}</p>
-                      </v-col>
+                  <v-col cols="12" align="left" >
+                    <v-row>
+                      <!-- アイコン画像と画像サイズ -->
+                      <v-img class="ml-4"  contain max-height="40" max-width="40" :src="content.image.url" />
+                      <!-- 名前と年齢-->
+                      <p class="text-h5 font-weight-bold">{{ content.name }}さん</p>
+                      <p class="text-h7  ml-4 mr-2 mt-2">{{ content.age }}歳</p>
+                      <!-- 性別 -->
+                      <p class="text-h7  mb-12 mt-2">{{ content.sex[0] }}性</p>
+                    </v-row>         
+                    <v-col> 
+                      <!-- プロフィール -->      
+                      <p class="text-h6 text--primary">{{ content.about }}</p>
+                    </v-col>
                   </v-col>
                 </v-row>
 
@@ -53,8 +52,7 @@
                   <v-row>
                     <p class="h7 ml-3 mr-10">活動エリア</p>
                     <p class="text-h7">関東周辺</p>
-                  <!--TODO:コンテンツのの埋め込み-->
-
+                  <!--TODO:コンテンツの埋め込み-->
                   </v-row>
                   <!-- 得意分野 -->
                   <v-row>
@@ -62,33 +60,38 @@
                       <p class="h7 ">得意分野</p>
                     </v-col>
                     <v-col v-for="genre in content.genres" :key="genre.id">
-                      <p class="text-h7  ">{{ genre }}</p>
+                      <p class="text-h7 ">{{ genre }}</p>
                     </v-col>
                   </v-row>
-              
               <!-- 得意分野の詳細な説明 -->
-              <v-col>
                 <p class="text-h7 mb-12">{{ content.genreDetail }}</p>
-              </v-col>
-            </v-col>
-            <!-- 資格 -->
+            <!-- 所持している資格 -->
             <v-col>
-              <p class="text-h7">所持している資格</p>
+            <v-row>
+              <p class="text-h7 mr-10">所持している資格</p>
               <p class="text-h7  mb-12">クライミング(特にマルチピッチ)・雪山</p>
               <!--TODO:コンテンツの埋め込み-->
-              <v-divider></v-divider>
+            </v-row>
+            </v-col>
+            <v-divider></v-divider>
             </v-col>
             <!-- レンタル品一覧 -->
             <v-col>
               <p class="font-weight-bold">レンタル品一覧</p>
-              <p class="font-weight-bold mb-12">{{ content.sex[0] }}</p>
+              <p class="font-weight-bold mb-12">ピッケル ヘルメット シュラフ アイゼン マット ビーコン 確保器 カラビナ スリング ハーネス 登山靴 ハイドレーション スノーシュー クライミングシューズ</p>
               <!--TODO:コンテンツの埋め込み-->
               <v-divider></v-divider>
             </v-col>
             <!--ガイドさんへの質問コーナー-->
             <v-col>
               <p class="font-weight-bold">ガイドさんへの質問コーナー</p>
-              <p class="text-h7  mb-12">{{ content.sex[0] }}</p>
+              <p class="text-h7  mb-12">Q1.一番登っている山はどこですか？</p>
+              <v-row>
+                <v-img class="ml-4"  contain max-height="40" max-width="40" :src="content.image.url" />
+              <v-col cols="11">
+                <p class="text-h7  mb-12 ">最も好きな山は妙義山です。 生まれて初めて岩場に挑戦した山で、最も登っている山でもあります。 頂上からの景色がとても素敵です。 ツアーに参加されたお客様からの評価も高く、お勧めの一山です。 是非一緒に挑戦しましょう。</p>
+              </v-col>
+              </v-row>
               <!--TODO:コンテンツの埋め込み-->
               <v-divider></v-divider>
             </v-col>
@@ -96,7 +99,7 @@
             
               <v-col>
                 <p class="font-weight-bold">アピールメッセージ</p>
-                <p class="text-h7  mb-12">{{ content.sex[0] }}</p>
+                <p class="text-h7  mb-12">得意なことは、食べられる野草を使って調理をしたり、スペシャルドリンクを考えたりする ことです。 野草料理を召し上がった人に、美味しいと思ってもらえるよう、いつも工夫とリサーチをし ています。 地域に伝わる野草の言い伝えも紹介しています。料理を交えてお話しができれば幸いです。</p>
                 <!--TODO:コンテンツの埋め込み-->
               </v-col>
             
@@ -106,7 +109,8 @@
           <v-col cols="4">
             
             <v-sheet rounded="xl" class="sticky" elevation="5" color="#FFFFFF">
-              <p class="text-h5 ml-11 pt-8">依頼費用の目安{{ content.age }}から</p>
+              <p class="text-h5 ml-11 pt-8">依頼費用の目安￥5,300から</p>
+              <!--TODO:コンテンツの埋め込み-->
               <div >
                 <v-list color="##FFFFFF">
                   <v-list-item
@@ -116,18 +120,18 @@
                     >
                     <v-list-item-content>
                       <v-list-item-title>
-                      <p class="text-h5 font-weight-bold ml-8 mb-6">{{ content.sex[0] }}ツアー</p> 
-                      <v-row>
-                      <p class="text-h7 ml-11  ">所要時間</p>
-                      <p class="text-h7  ml-12 ">{{ content.age }}分</p>
-                      <!--TODO:コンテンツの埋め込み-->
-                      </v-row>
-                      
-                      <v-row>
-                      <p class="text-h7 ml-11  ">難易度</p>
-                      <p class="text-h7  ml-16 mb-12">{{ content.sex[0] }}</p>
-                      <!--TODO:コンテンツの埋め込み-->
-                      </v-row>
+                        <p class="text-h5 font-weight-bold ml-8 mb-6">高尾山ツアー</p> 
+                        <v-row>
+                          <p class="text-h7 ml-11  ">所要時間</p>
+                          <p class="text-h7  ml-12 ">120分</p>
+                        <!--TODO:コンテンツの埋め込み-->
+                        </v-row>
+                        
+                        <v-row>
+                          <p class="text-h7 ml-11  ">難易度</p>
+                          <p class="text-h7  ml-16 mb-12">中級</p>
+                        <!--TODO:コンテンツの埋め込み-->
+                        </v-row>
                       </v-list-item-title>
                     </v-list-item-content>
                   </v-list-item>
@@ -184,6 +188,7 @@ object-fit:cover;
   overflow: hidden;
 }
 
+/* TODO:↑これいらないかも */
 
 .sticky {
     position: sticky;
