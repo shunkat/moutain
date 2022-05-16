@@ -56,11 +56,11 @@
                   </v-row>
                   <!-- 得意分野 -->
                   <v-row>
-                    <v-col>
-                      <p class="h7 ">得意分野</p>
-                    </v-col>
-                    <v-col v-for="genre in content.genres" :key="genre.id">
-                      <p class="text-h7 ">{{ genre }}</p>
+                    
+                      <p class="h7  pl-3 mt-3">得意分野</p>
+                    
+                    <v-col  v-for="genre in content.genres" :key="genre.id">
+                      <p class="text-h7 text-center" >{{ genre }}</p>
                     </v-col>
                   </v-row>
               <!-- 得意分野の詳細な説明 -->
@@ -88,7 +88,7 @@
               <p class="text-h7  mb-12">Q1.一番登っている山はどこですか？</p>
               <v-row>
                 <v-img class="ml-4"  contain max-height="40" max-width="40" :src="content.image.url" />
-              <v-col cols="11">
+              <v-col cols="10">
                 <p class="text-h7  mb-12 ">最も好きな山は妙義山です。 生まれて初めて岩場に挑戦した山で、最も登っている山でもあります。 頂上からの景色がとても素敵です。 ツアーに参加されたお客様からの評価も高く、お勧めの一山です。 是非一緒に挑戦しましょう。</p>
               </v-col>
               </v-row>
@@ -112,7 +112,7 @@
               <p class="text-h5 ml-11 pt-8">依頼費用の目安￥5,300から</p>
               <!--TODO:コンテンツの埋め込み-->
               <div >
-                <v-list color="##FFFFFF">
+                <v-list rounded="xl" color="##FFFFFF">
                   <v-list-item
                     v-for="n in 2"
                     :key="n"
@@ -143,7 +143,8 @@
                     color="#000000"
                     align="center"
                   >
-                    <v-list-item-content>
+                    <v-list-item-content
+                    >
                   <v-col>   
                     <v-btn
                     width="200"
