@@ -60,8 +60,6 @@
                       <p class="text-h7 text-center" >{{ genre }}</p>
                     </v-col>
                   </v-row>
-              <!-- 得意分野の詳細な説明 -->
-                <p class="text-h7 mb-12">{{ content.genreDetail }}</p>
             <!-- 所持している資格 -->
             <v-col>
             <v-row>
@@ -176,7 +174,6 @@ width:100%;
 height:100%;
 object-fit:cover;
 }
-
 
 .request-cost span {
   color:#D13A3A;
