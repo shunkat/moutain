@@ -49,13 +49,13 @@
                 <v-spacer class="my-16" />
                   <!--活動エリア -->
                   <v-row>
-                    <p class="h7 ml-3 mr-10">活動エリア</p>
+                    <p class="h7 ml-3 mr-16 pr-7">活動エリア</p>
                     <p class="text-h7">関東周辺</p>
                   <!--TODO:コンテンツの埋め込み-->
                   </v-row>
                   <!-- 得意分野 -->
                   <v-row>
-                      <p class="h7  pl-3 mt-3">得意分野</p>
+                      <p class="h7  pl-3 mt-3 mr-12">得意分野</p>
                     <v-col  v-for="genre in content.genres" :key="genre.id">
                       <p class="text-h7 text-center" >{{ genre }}</p>
                     </v-col>
@@ -63,12 +63,13 @@
             <!-- 所持している資格 -->
             <v-col>
             <v-row>
-              <p class="text-h7 mr-10">所持している資格</p>
-              <p class="text-h7  mb-12">クライミング(特にマルチピッチ)・雪山</p>
+              <p class="text-h7 mr-10 mt-3">所持している資格</p>
+              <p class="text-h7 mb-12 mt-3">クライミング(特にマルチピッチ)・雪山</p>
               <!--TODO:コンテンツの埋め込み-->
             </v-row>
             </v-col>
-            <v-divider></v-divider>
+            <v-divider class=""></v-divider>
+            
             </v-col>
             <!-- レンタル品一覧 -->
             <v-col>
@@ -220,12 +221,6 @@ object-fit:cover;
   margin: 0;
   padding: 0;
 }
-
-.overflow-hidden{
-  overflow: hidden;
-}
-
-/* TODO:↑これいらないかも */
 
 .sticky {
     position: sticky;
