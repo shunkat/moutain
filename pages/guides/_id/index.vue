@@ -81,14 +81,15 @@
             <!--ガイドさんへの質問コーナー-->
             <v-col>
               <p class="font-weight-bold">ガイドさんへの質問コーナー</p>
-              <p class="text-h7  mb-12">Q1.一番登っている山はどこですか？</p>
-              <v-row>
-                <v-img class="ml-4 mt-7"  contain max-height="40" max-width="40" :src="content.image.url" />
-              <v-col cols="10">
-                <div class="my-parts-content">最も好きな山は妙義山です。 生まれて初めて岩場に挑戦した山で、最も登っている山でもあります。 頂上からの景色がとても素敵です。 ツアーに参加されたお客様からの評価も高く、お勧めの一山です。 是非一緒に挑戦しましょう。
-                </div>
-              </v-col>
-              </v-row>
+              <div v-for="(faq, index) in faqList" :key="index">
+                <p class="text-h7  mb-12">{{faq.question}}</p>
+                <v-row>
+                  <v-img class="ml-4 mt-7"  contain max-height="40" max-width="40" :src="content.image.url" />
+                  <v-col cols="10">
+                    <div class="my-parts-content">{{faq.answer}}</div>
+                  </v-col>
+                </v-row>
+              </div>
               <!--TODO:コンテンツの埋め込み-->
               <v-divider></v-divider>
             </v-col>
@@ -162,8 +163,20 @@ export default {
     const content = await $microcms.get({
       endpoint: `guides/${params.id}`,
     });
+
+    const faqList = [
+      {
+        question: 'Q1.一番登っている山はどこですか？',
+        answer: '最も好きな山は妙義山です。 生まれて初めて岩場に挑戦した山で、最も登っている山でもあります。 頂上からの景色がとても素敵です。 ツアーに参加されたお客様からの評価も高く、お勧めの一山です。 是非一緒に挑戦しましょう。'
+      },
+      {
+        question: 'Q2.ガイドをするにあたって心掛けていることはなんですか？',
+        answer: '自然の良さを体感して頂けるよう、ビューポイントを予め押さえて、通過時には お客様へ紹介しています。お客様の中には、登ることに専念しすぎて、ビューポイ ントに気づかず通り過ぎてしまう方もいます。その都度お知らせして、その山から しか見られない絶景を、楽しんで頂きたいと考えています。 人と自然の間に立つインタープリターとして、両者の限りなき融和の一助となれ るよう尽力しています。'
+      }
+    ]
     return {
       content,
+      faqList
     };
   },
 };
