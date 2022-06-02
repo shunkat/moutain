@@ -2,11 +2,6 @@
   <section class="home">
     <HomeHero></HomeHero>
   </section>
-  <!-- <div>
-    <nuxt-link to="/guides/">
-      <p>フロントページ自由にいじってね</p>
-    </nuxt-link>
-  </div> -->
 </template>
 <script>
 import HomeHero from "../components/HomeHero.vue";
