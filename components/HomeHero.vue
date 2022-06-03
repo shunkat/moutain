@@ -1,36 +1,31 @@
 <template>
-  <div class="TextAnime1">
-    <textarea v-model.lazy="editor" style="width:80%;height:40px;"></textarea>
-    <transition-group tag="div" class="title">
-      <span v-for="el in text" :key="el.id" class="item" v-text="el.text"/>
-    </transition-group>
-  </div>
-</template>
+  <section class="home-hero">
+    <v-container  mt-0 pt-0 fluid fill-height class="home-hero__content"
+      >
+      <v-row class="home-hero__content-text">
+        <transition-group tag="div" class="title">
+          <span v-for="el in text" :key="el.id" class="item home-hero__content-text" v-text="el.text"/>
+        </transition-group>
+      </v-row>
+    </v-container>
+  </section>
 
+</template>
 <script>
 export default {
-  props: {
-    autoplay: Boolean
-  },
   data() {
     return {
       timer: null,
       index: 0,
       // オリジナルメッセージ
       original: [
-        '機能ごとに解説している Vue.js 入門書です。これからはじめる方にも、すでに Vue.js をお使いの方にも、楽しんでいただける内容になっています。',
-        'Vue.js は直感的に使える機能が多く、雰囲気で使ってしまいがちです。どんなメリット＆デメリットがあるかも解説しているため、しっかりと学習できます。',
-        '各チャプターやセクションは、基本的に独立した解説になっています。そのため、知りたい機能をピックアップして学習できます。'
+        '山をもっと、身近に',
+        '山をもっと、安全に',
+        '山をもっと、楽しく'
       ],
       // 分解したメッセージ
       messages: [],
       text: ''
-    }
-  },
-  computed: {
-    editor: {
-      get() { return this.text.map(e => e.text).join('') },
-      set(text) { this.text = this.convText(text) }
     }
   },
   watch: {
@@ -41,15 +36,18 @@ export default {
       }
     }
   },
+  created() {
+    this.messages = this.original.map(el => this.convText(el))
+    this.text = this.messages[0]
+    this.ticker()
+  },
   methods: {
     // デモ用のオートタイマー
     ticker() {
       this.timer = setTimeout(() => {
-        if (this.autoplay) {
           this.index = this.index < this.messages.length-1 ? this.index + 1 : 0
           this.text = this.messages[this.index]
           this.ticker()
-        }
       }, 5000)
     },
     // テキストを分解してオブジェクトに
@@ -61,18 +59,25 @@ export default {
       })
       return Object.freeze(result) // 監視しない
     }
-  },
-  created() {
-    this.messages = this.original.map(el => this.convText(el))
-    this.text = this.messages[0]
-    this.ticker()
   }
 }
 </script>
 
-<style scoped>
-.title {
-  font-size: 2rem;
+<style lang="scss" scoped>
+.home-hero__content {
+  background: url("../assets/img/home-img.jpg");
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 90vh;
+  text-align:"center";
+
+  &-text {
+    color: white;
+    text-align: center;
+    font-size: 42px;
+    font-weight: bold;
+  }
 }
 
 .item {
