@@ -27,7 +27,7 @@ export default {
     }
   },
   async asyncData({ $microcms }) {
-    const guides = await $microcms.get({
+    guides = await $microcms.get({
       endpoint: "guides",
       // queries: {filters: 'name[contains]"selected"'},
     });

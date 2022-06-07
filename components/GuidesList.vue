@@ -2,9 +2,9 @@
     <v-main class="grey lighten-2">
       <v-container>
         <v-row>
-          <template v-for="(content,index) in sections.contents" :key=index>
+          <template>
             <v-col
-              
+              v-for="content in sections.contents" :key=content.id
               class="mt-2"
               cols="12"
             >
